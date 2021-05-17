@@ -60,7 +60,7 @@ module.exports.getArticleById = async (req, res) => {
 
       }
     } catch (error) {
-        console.log("***ERROR IN FETCHING ALL THE ARTICLES*** = ", err);
+        console.log("***ERROR IN FETCHING THE ARTICLE*** = ", err);
         return res.status(500).json({
             message: "Internal Server Error"
         });
@@ -87,11 +87,52 @@ module.exports.deleteArticle = async (req, res) => {
         });
       }
     } catch (error) {
-        console.log("***ERROR IN FETCHING ALL THE ARTICLES*** = ", err);
+        console.log("***ERROR IN DELETING THE ARTICLE*** = ", err);
         return res.status(500).json({
             message: "Internal Server Error"
         });
     }
       
     };
+
     
+
+// @desc UPDATE a blog post
+// @route PUT /api/articles/:id
+// @access  Private/admin
+module.exports.updateArticle = async (req, res) => {
+
+    try {
+        
+        const {
+            title,
+            content,
+          } = req.body;
+        
+          const article = await Article.findById(req.params.id);
+        
+          if(article){
+            article.title = title
+            article.content = content
+            
+            const updatedArticle = await article.save();
+            // res.json(updatedProduct);
+            return res.status(201).json({
+                article : updatedArticle,
+                message: "Article Updated"
+            });
+          }else{
+            res.status(404);
+            throw new Error('Article Not Found');
+          }
+
+    } catch (error) {
+        
+        console.log("***ERROR IN UPDATING THE ARTICLE*** = ", err);
+        return res.status(500).json({
+            message: "Internal Server Error"
+        });
+
+    }
+      
+    };    
