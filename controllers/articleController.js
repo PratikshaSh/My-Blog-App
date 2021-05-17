@@ -16,10 +16,30 @@ module.exports.createArticle = async (req, res) => {
         });
 
     } catch (error) {
-        console.log("***ERROR*** = ", err);
-        return res.json(500,{
+        console.log("***ERROR IN CREATING ARTICLE*** = ", err);
+        return res.status(500).json({
             message: "Internal Server Error"
         });
     }
     
     };
+
+
+// @desc Fetch all blogs posts
+// @route GET /api/articles
+// @access  Public
+module.exports.getAllArticles = async (req, res) => {
+    try {
+        const articles = await Article.find({});
+        return res.json(articles);
+
+    } catch (error) {
+        console.log("***ERROR IN FETCHING ALL THE ARTICLES*** = ", err);
+        return res.status(500).json({
+            message: "Internal Server Error"
+        });
+    }
+    
+    };    
+
+    
