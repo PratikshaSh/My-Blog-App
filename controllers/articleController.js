@@ -67,4 +67,31 @@ module.exports.getArticleById = async (req, res) => {
     }
       
     };
+
+
+// @desc delete a blog post
+// @route GET /api/articles/:id
+// @access  Private/admin
+module.exports.deleteArticle = async (req, res) => {
+    try {
+        const article = await Article.findById(req.params.id);
+      if (article) {
+        await article.remove();
+    
+        res.json({
+          message: "Article removed",
+        });
+      } else {
+        res.status(404).json({
+          message: "Article Not found",
+        });
+      }
+    } catch (error) {
+        console.log("***ERROR IN FETCHING ALL THE ARTICLES*** = ", err);
+        return res.status(500).json({
+            message: "Internal Server Error"
+        });
+    }
+      
+    };
     
