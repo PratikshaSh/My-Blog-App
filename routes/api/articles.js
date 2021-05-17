@@ -8,5 +8,5 @@ router.post("/", articleController.createArticle);
 router.get("/:id", articleController.getArticleById);
 
 
-
+router.delete('/:id', articleController.deleteArticle);
 module.exports = router;
