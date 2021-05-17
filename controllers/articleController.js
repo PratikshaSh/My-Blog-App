@@ -42,4 +42,29 @@ module.exports.getAllArticles = async (req, res) => {
     
     };    
 
+// @desc Fetch a single blog by id
+// @route GET /api/articles/:id
+// @access  Public
+module.exports.getArticleById = async (req, res) => {
+    try {
+        const article = await Article.findById(req.params.id);
+      if (article) {
+
+        res.json(article);
+
+      } else {
+
+        res.status(404).json({
+          message: "Article Not found",
+        });
+
+      }
+    } catch (error) {
+        console.log("***ERROR IN FETCHING ALL THE ARTICLES*** = ", err);
+        return res.status(500).json({
+            message: "Internal Server Error"
+        });
+    }
+      
+    };
     

@@ -5,6 +5,7 @@ const articleController = require('../../controllers/articleController');
 router.get("/", articleController.getAllArticles);
 router.post("/", articleController.createArticle);
 
+router.get("/:id", articleController.getArticleById);
 
 
 
