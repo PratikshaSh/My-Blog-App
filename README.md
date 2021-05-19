@@ -16,6 +16,7 @@ stacks also like NodeJS). Include these APIs:
  - <a href="#techstack ">Tech Stack</a>
  - <a href="#mongo ">Why MonogoDB is used</a>
  - <a href="#routes">All API Routes</a>
+ - <a href="#postman">Postman collection</a>
 
  
  
@@ -39,3 +40,6 @@ stacks also like NodeJS). Include these APIs:
 <img src="apiRoutes.jpg">api routes</img>
 
 
+## <h1 id = "postman">POSTMAN COLLECTION LINK</h1>
+- <a href="https://www.postman.com/collections/371cfc4a6c8b661f0286">https://www.postman.com/collections/371cfc4a6c8b661f0286</a>
+ 
