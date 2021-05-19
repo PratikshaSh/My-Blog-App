@@ -73,7 +73,7 @@ module.exports.getArticleById = async (req, res) => {
 
 
 // @desc delete a blog post
-// @route GET /api/articles/:id
+// @route DELETE /api/articles/:id
 // @access  Private/admin
 module.exports.deleteArticle = async (req, res) => {
     try {
