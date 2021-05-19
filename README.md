@@ -37,7 +37,7 @@ stacks also like NodeJS). Include these APIs:
 
 ## <h1 id = "routes">ALL API ROUTES</h1>
 
-<img src="apiRoutes.jpg">api routes</img>
+<img src="apiRoutes.jpg"></img>
 
 
 ## <h1 id = "postman">POSTMAN COLLECTION LINK</h1>
