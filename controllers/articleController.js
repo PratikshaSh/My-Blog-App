@@ -16,7 +16,7 @@ module.exports.createArticle = async (req, res) => {
         });
 
     } catch (error) {
-        console.log("***ERROR IN CREATING ARTICLE*** = ", err);
+        console.log("***ERROR IN CREATING ARTICLE*** = ", error);
         return res.status(500).json({
             message: "Internal Server Error"
         });
@@ -34,7 +34,7 @@ module.exports.getAllArticles = async (req, res) => {
         return res.json(articles);
 
     } catch (error) {
-        console.log("***ERROR IN FETCHING ALL THE ARTICLES*** = ", err);
+        console.log("***ERROR IN FETCHING ALL THE ARTICLES*** = ", error);
         return res.status(500).json({
             message: "Internal Server Error"
         });
@@ -60,7 +60,7 @@ module.exports.getArticleById = async (req, res) => {
 
       }
     } catch (error) {
-        console.log("***ERROR IN FETCHING THE ARTICLE*** = ", err);
+        console.log("***ERROR IN FETCHING THE ARTICLE*** = ", error);
         return res.status(500).json({
             message: "Internal Server Error"
         });
@@ -87,7 +87,7 @@ module.exports.deleteArticle = async (req, res) => {
         });
       }
     } catch (error) {
-        console.log("***ERROR IN DELETING THE ARTICLE*** = ", err);
+        console.log("***ERROR IN DELETING THE ARTICLE*** = ", error);
         return res.status(500).json({
             message: "Internal Server Error"
         });
@@ -128,7 +128,7 @@ module.exports.updateArticle = async (req, res) => {
 
     } catch (error) {
         
-        console.log("***ERROR IN UPDATING THE ARTICLE*** = ", err);
+        console.log("***ERROR IN UPDATING THE ARTICLE*** = ", error);
         return res.status(500).json({
             message: "Internal Server Error"
         });
