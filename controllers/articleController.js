@@ -1,4 +1,5 @@
 const Article = require("../models/articleModel");
+const Comment = require("../models/commentModel");
 
 // @desc Create a  blog post
 // @route POST /api/articles/
@@ -77,9 +78,10 @@ module.exports.deleteArticle = async (req, res) => {
         const article = await Article.findById(req.params.id);
       if (article) {
         await article.remove();
+        await Comment.deleteMany({article: req.params.id});
     
         res.json({
-          message: "Article removed",
+          message: "Article and associated comments deleted",
         });
       } else {
         res.status(404).json({
