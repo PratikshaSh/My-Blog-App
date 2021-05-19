@@ -39,3 +39,33 @@ module.exports.create = async(req, res) => {
     }
     
 }
+
+// @desc Fetch all comments for a posts
+// @route GET /api/comments/:id
+// @access  Public
+module.exports.getAllComments = async (req, res) => {
+    try {
+        const article = await Article.findById(req.params.id).populate('comments');
+        if(article){
+            res.json(article.comments)
+        }
+        else{
+            return res.status(404).json({
+                message: "This article does not exist"
+            });
+        }
+       
+
+    } catch (error) {
+        console.log("***ERROR IN FETCHING ALL THE COMMENTS OF THIS ARTICLE*** = ", error);
+        return res.status(500).json({
+            message: "Internal Server Error"
+        });
+    }
+    
+    };    
+
+
+
+
+  
