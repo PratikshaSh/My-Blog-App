@@ -8,7 +8,9 @@ module.exports.createArticle = async (req, res) => {
     try {
         const article = new Article({
             title: req.body.title,
-            content: req.body.content
+            content: req.body.content,
+            image1: req.body.image1,
+            image2: req.body.image2
         });
         const createdArticle = await article.save();
         return res.status(201).json({
@@ -109,6 +111,8 @@ module.exports.updateArticle = async (req, res) => {
         const {
             title,
             content,
+            image1,
+            image2
           } = req.body;
         
           const article = await Article.findById(req.params.id);
@@ -116,6 +120,8 @@ module.exports.updateArticle = async (req, res) => {
           if(article){
             article.title = title
             article.content = content
+            article.image1 = image1
+            article.image2 = image2
             
             const updatedArticle = await article.save();
             // res.json(updatedProduct);

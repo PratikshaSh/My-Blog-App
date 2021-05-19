@@ -10,6 +10,12 @@ const articleSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    image1: {
+        type: String
+    },
+    image2:{
+        type:String
+    },
      // include the array of ids of all comments in this post schema itself
      comments: [
         {
