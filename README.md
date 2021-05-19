@@ -20,9 +20,9 @@ stacks also like NodeJS). Include these APIs:
  
  
  ## <h1 id = "techstack">TECH STACK</h1>
- - Node.js
- - Express.js
- - Mongodb
+ - **Node.js** - Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.
+ - **Express.js** - Express.js, or simply Express, is a back end web application framework for Node.js, released as free and open-source software under the MIT License. It is designed for building web applications and APIs. It has been called the de facto standard server framework for Node.js.
+ - **Mongodb** - MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas. MongoDB is developed by MongoDB Inc. and licensed under the Server Side Public License. 
 
 
 
