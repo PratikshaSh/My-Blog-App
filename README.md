@@ -1,6 +1,5 @@
 # My-Blog-App
-**Problem Statement :** Create an application for CRUD operations on blog (Preferred tech stack is Springboot, but you can use other 
-stacks also like NodeJS). Include these APIs: 
+**Problem Statement :** Create an application for CRUD operations on blog.
 - LEVEL 1
 - POST : Add a blog
 - GET : Get all the blogs
